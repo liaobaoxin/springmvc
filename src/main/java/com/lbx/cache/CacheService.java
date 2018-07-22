@@ -51,12 +51,12 @@ public class CacheService {
      *            对象对应的key值
      * @return
      */
-    public Object get(Object key) {
+    public  <T> T get(Object key) {
         ValueWrapper valueWrapper = getCache().get(key);
         if (valueWrapper != null) {
-            return getCache().get(key).get();
+            return (T) getCache().get(key).get();
         }
-        return valueWrapper;
+        return  (T) valueWrapper;
     }
 
     /**
