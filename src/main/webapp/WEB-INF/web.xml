@@ -34,4 +34,12 @@
     </servlet-mapping>
 
 
+    <context-param>
+        <param-name>contextParam</param-name>
+        <param-value>contextValue</param-value>
+    </context-param>
+
+
+
+
 </web-app>

@@ -18,4 +18,20 @@
         <property name = "prefix" value="/WEB-INF/jsp/"></property>
         <property name = "suffix" value = ".jsp"></property>
     </bean>
+
+
+
+    <bean id="cacheService" class="com.lbx.cache.CacheService">
+        <property name="ehCacheCacheManager" ref="cacheManager"></property>
+        <property name="cachename" value="cacheTest"></property>
+    </bean>
+
+
+    <bean id="cacheManager" class="org.springframework.cache.ehcache.EhCacheCacheManager">
+        <property name="cacheManager" ref="ehcache"></property>
+    </bean>
+
+    <bean id="ehcache" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
+        <property name="configLocation" value="classpath:ehcache-setting.xml"></property>
+    </bean>
 </beans>
